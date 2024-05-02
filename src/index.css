@@ -1,0 +1,300 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #1aa2ac;
+  --error: #e7195a;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.workout-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.workout-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.workout-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+/* new workout form */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a, nav button {
+  margin-left: 10px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.actions .delete-btn,
+.actions .edit-btn {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.actions .delete-btn:hover {
+  background-color: #e7195a;
+  color: white;
+}
+
+.actions .edit-btn:hover {
+  background-color: #1aa2ac;
+  color: white;
+}
+
+.actions .icon {
+  margin-right: 8px;
+}
+/* Search container */
+.search-container {
+  margin-bottom: 10px; /* Adjust the margin below the search container */
+  display: flex;
+  justify-content: center; /* Center the search input */
+  align-items: center; /* Center the input vertically */
+}
+
+/* Search input */
+.search-input {
+  width: 300px; /* Set the width of the input to be small */
+  padding: 8px; /* Adjust the padding for a smaller input */
+  border: 1px solid #ccc; /* Set a border color */
+  border-radius: 4px; /* Add a small border radius for rounded corners */
+  font-size: 14px; /* Set the font size for the input */
+  outline: none; /* Remove the default outline on focus */
+  transition: border-color 0.3s ease-in-out; /* Add a transition effect for border color */
+}
+
+/* Add a focus effect */
+.search-input:focus {
+  border-color: var(--primary); /* Change border color to primary color on focus */
+}
+
+/* Navbar styles */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes content to the right */
+}
+
+nav > div > span {
+  margin-right: 20px; /* Add margin to the right of the email text */
+}
+
+.search-container {
+  margin-right: 20px; /* Add margin to the right of the search input */
+}
+
+.search-input {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px; /* Adjust width as needed */
+}
+
+/* Media queries for responsive form */
+
+/* Extra small screens (phones, less than 480px) */
+@media (max-width: 479px) {
+  form {
+    margin: 10px; /* Adjust form margin */
+    padding: 10px; /* Adjust form padding */
+  }
+
+  form label, form input, form textarea {
+    font-size: 0.9rem; /* Adjust the font size for smaller screens */
+    margin-bottom: 8px; /* Reduce the margin between elements */
+  }
+
+  form input, form textarea {
+    padding: 8px; /* Adjust the padding for smaller screens */
+  }
+
+  form button {
+    padding: 8px 10px; /* Adjust button padding */
+    font-size: 0.9rem; /* Adjust the font size for smaller screens */
+  }
+}
+
+/* Small screens (phones, 480px to 767px) */
+@media (max-width: 767px) {
+  form {
+    margin: 15px; /* Adjust form margin */
+    padding: 15px; /* Adjust form padding */
+  }
+
+  form label, form input, form textarea {
+    font-size: 1rem; /* Keep a consistent font size */
+    margin-bottom: 10px; /* Maintain margin between elements */
+  }
+
+  form input, form textarea {
+    padding: 10px; /* Adjust the padding for small screens */
+  }
+
+  form button {
+    padding: 10px 15px; /* Adjust button padding */
+    font-size: 1rem; /* Keep a consistent font size */
+  }
+}
+
+/* Medium screens (tablets, 768px to 1023px) */
+@media (max-width: 1023px) {
+  form {
+    max-width: 450px; /* Adjust the maximum width of the form */
+  }
+
+  form label, form input, form textarea {
+    font-size: 1rem; /* Maintain consistent font size */
+    margin-bottom: 10px; /* Maintain margin between elements */
+  }
+
+  form input, form textarea {
+    padding: 10px; /* Adjust the padding */
+  }
+
+  form button {
+    padding: 10px 15px; /* Adjust button padding */
+    font-size: 1rem; /* Maintain consistent font size */
+  }
+}
+
+/* Large screens (desktops, 1024px and above) */
+@media (min-width: 1024px) {
+  form {
+    max-width: 500px; /* Maintain maximum width of the form */
+  }
+
+  form label, form input, form textarea {
+    font-size: 1rem; /* Keep a consistent font size */
+    margin-bottom: 10px; /* Maintain margin between elements */
+  }
+
+  form input, form textarea {
+    padding: 10px; /* Maintain padding */
+  }
+
+  form button {
+    padding: 10px 15px; /* Maintain button padding */
+    font-size: 1rem; /* Maintain consistent font size */
+  }
+}
+
