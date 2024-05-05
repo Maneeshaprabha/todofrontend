@@ -38,7 +38,7 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
-.workout-details {
+.todo-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
@@ -46,17 +46,17 @@ header a {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
-.workout-details h4 {
+.todo-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
-.workout-details p {
+.todo-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
-.workout-details span {
+.todo-details span {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -67,7 +67,7 @@ header a {
   color: #333;
 }
 
-/* new workout form */
+/* new todo form */
 label, input {
   display: block;
 }
@@ -210,6 +210,97 @@ nav > div > span {
   width: 200px; /* Adjust width as needed */
 }
 
+
+/* todo styles */
+.view-todo {
+  max-width: 600px; /* Limit the width for readability */
+  margin: 0 auto; /* Center the content */
+  padding: 20px; /* Add padding around the content */
+  background-color: #fff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Headings */
+.view-todo h1 {
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: var(--primary); /* Primary color */
+  font-size: 24px; /* Adjust the font size */
+}
+
+/* Paragraphs */
+.view-todo p {
+  margin-bottom: 10px; /* Add margin between paragraphs */
+  font-size: 16px; /* Font size */
+  color: #333; /* Dark gray color */
+}
+
+/* Strong tags for emphasis */
+.view-todo p strong {
+  color: var(--primary); /* Use primary color for emphasis */
+}
+
+/* Loading and error messages */
+.view-todo p.loading,
+.view-todo p.error {
+  text-align: center; /* Center the text */
+  color: var(--primary); /* Use primary color for loading message */
+}
+
+.view-todo p.error {
+  color: var(--error); /* Use error color for error message */
+}
+/* Style for the "View" button */
+.view-btn {
+  background-color: #1aa2ac;
+ /* Set the background color */
+  color: #fff; /* Set the text color */
+  border: none; /* Remove the default border */
+  padding: 10px 15px; /* Add padding for comfortable click area */
+  border-radius: 4px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change the cursor to a pointer when hovered */
+  display: flex; /* Use flex to align the icon and text */
+  align-items: center; /* Align the icon and text vertically */
+  transition: background-color 0.3s ease-in-out; /* Add a transition effect for hover */
+}
+
+/* Style for the icon inside the button */
+.view-btn .icon {
+  margin-right: 8px; /* Add space between the icon and text */
+}
+
+/* Hover effect for the "View" button */
+.view-btn:hover {
+  background-color: #4c51bf; /* Darken the background color on hover */
+}
+
+
+
+
+/* Style for the checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Remove the default appearance */
+  width: 20px; /* Set custom width */
+  height: 20px; /* Set custom height */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 3px; /* Slightly round the corners */
+  background-color: #f9f9f9; /* Background color */
+  cursor: pointer; /* Cursor pointer on hover */
+  transition: background-color 0.3s, border-color 0.3s; /* Add transition effect */
+}
+
+/* Style when the checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: var(--primary); /* Change background color when checked */
+  border-color: var(--primary); /* Change border color when checked */
+  color: white; /* Optional: Change the text color if you use a custom checkbox with text */
+}
+
+/* Optional: Add styles for hover effects */
+input[type="checkbox"]:hover {
+  border-color: #888; /* Change border color on hover */
+}
+
 /* Media queries for responsive form */
 
 /* Extra small screens (phones, less than 480px) */
@@ -233,6 +324,9 @@ nav > div > span {
     font-size: 0.9rem; /* Adjust the font size for smaller screens */
   }
 }
+
+
+
 
 /* Small screens (phones, 480px to 767px) */
 @media (max-width: 767px) {

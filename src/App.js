@@ -6,26 +6,28 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
-import EditWorkout from './pages/EditWorkout'; // Import the new page
+import EditTodo from './pages/EditTodo'; // Import the updated EditTodo page
+import ViewTodo from './pages/ViewTodo '; // Import the updated ViewTodo page
 
 function App() {
-  const { user } = useAuthContext();
+    const { user } = useAuthContext();
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <div className="pages">
-          <Routes>
-            <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
-            <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
-            <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
-            <Route path="/edit-workout/:id" element={user ? <EditWorkout /> : <Navigate to="/login" />} /> {/* Add new route */}
-          </Routes>
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Navbar />
+                <div className="pages">
+                    <Routes>
+                        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+                        <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
+                        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+                        <Route path="/edit-todo/:id" element={user ? <EditTodo /> : <Navigate to="/login" />} /> {/* Updated route path */}
+                        <Route path="/view-todo/:id" element={user ? <ViewTodo /> : <Navigate to="/login" />} /> {/* Updated route path */}
+                    </Routes>
+                </div>
+            </BrowserRouter>
         </div>
-      </BrowserRouter>
-    </div>
-  );
+    );
 }
 
 export default App;
