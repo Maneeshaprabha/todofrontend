@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
+import { useTodosContext } from '../hooks/useTodosContext';
 import { useAuthContext } from '../hooks/useAuthContext';
-import WorkoutDetails from '../components/WorkoutDetails';
-import WorkoutForm from '../components/WorkoutForm';
+import TodoDetails from '../components/TodoDetails';
+import TodoForm from '../components/TodoForm';
 
 const Home = () => {
-    const { workouts, dispatch } = useWorkoutsContext();
+    const { todos, dispatch } = useTodosContext();
     const { user } = useAuthContext();
     const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
-        const fetchWorkouts = async () => {
-            const response = await fetch('/api/workouts', {
+        const fetchTodos = async () => {
+            const response = await fetch('/api/todos', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`,
                 },
@@ -20,23 +20,23 @@ const Home = () => {
             const json = await response.json();
 
             if (response.ok) {
-                dispatch({ type: 'SET_WORKOUTS', payload: json });
+                dispatch({ type: 'SET_TODOS', payload: json });
             }
         };
 
         if (user) {
-            fetchWorkouts();
+            fetchTodos();
         }
     }, [dispatch, user]);
 
-    // Filter the workouts based on the search query
-    const filteredWorkouts = workouts ? workouts.filter(workout => 
-        workout.title.toLowerCase().includes(searchQuery.toLowerCase())
+    // Filter the todos based on the search query
+    const filteredTodos = todos ? todos.filter(todo => 
+        todo.title.toLowerCase().includes(searchQuery.toLowerCase())
     ) : [];
 
     return (
         <div className="home">
-            <div className="workouts">
+            <div className="todos">
                 {/* Search input */}
                 <input
                     type="text"
@@ -44,12 +44,12 @@ const Home = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                {/* Display filtered workouts */}
-                {filteredWorkouts.map((workout) => (
-                    <WorkoutDetails key={workout._id} workout={workout} />
+                {/* Display filtered todos */}
+                {filteredTodos.map((todo) => (
+                    <TodoDetails key={todo._id} todo={todo} />
                 ))}
             </div>
-            <WorkoutForm />
+            <TodoForm />
         </div>
     );
 };
